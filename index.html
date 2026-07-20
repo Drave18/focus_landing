@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FOCUS — invisible, enterprise-grade infrastructure that eliminates context switching and turns your team's cognitive capacity into a measurable, protectable asset." />
+  <title>FOCUS — Attention</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="FOCUS home">
+        <span class="nav__brand-mark" aria-hidden="true"></span>
+        <span class="nav__brand-text">FOCUS</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#science">Research</a>
+        <a href="#pricing">Cost</a>
+        <a href="#product">Solution</a>
+        <a class="nav__cta" href="#demo">Book a Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="eyebrow__num">01</span> The invisible tax on modern business</p>
+          <h1 class="hero__title" id="hero-title">
+            The hidden <em>Attention Tax</em>
+          </h1>
+          <p class="hero__lede">
+            Every company tracks time, costs, and tasks. But the resource driving all three is being destroyed by constant digital noise. Context switching is draining cognitive capacity at scale — and almost no one is measuring it.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#science">See the research<span aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn--ghost" href="#pricing">Calculate the cost<span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <p class="hero__trust">
+            <span class="hero__trust-rule" aria-hidden="true"></span>
+            Trusted by high-performance engineering, product, and operations teams.
+          </p>
+        </div>
+
+        <!-- Signature: live Attention Tax dashboard -->
+        <aside class="panel" aria-label="Live attention tax readout">
+          <div class="panel__head">
+            <span class="panel__label">Attention tax</span>
+            <span class="panel__status"><span class="panel__dot" aria-hidden="true"></span>Live</span>
+          </div>
+
+          <div class="panel__hero-stat">
+            <span class="panel__big" id="tax-counter" data-target="216000" data-prefix="$" aria-label="$216,000 lost this year">$0</span>
+            <span class="panel__caption">lost to context switching this year<span class="panel__caption-sub" id="tax-team-note">— based on a 50-person team</span></span>
+          </div>
+
+          <div class="panel__rule" aria-hidden="true"></div>
+
+          <div class="panel__bar">
+            <div class="panel__bar-track" role="img" aria-label="Cognitive capacity: 60 percent deep work, 40 percent fragmented">
+              <div class="panel__bar-deep" style="width:60%"></div>
+              <div class="panel__bar-lost" style="width:40%"></div>
+            </div>
+            <div class="panel__bar-legend">
+              <span><i class="swatch swatch--deep"></i>60% deep work</span>
+              <span><i class="swatch swatch--lost"></i>40% fragmented</span>
+            </div>
+          </div>
+
+          <div class="panel__rule" aria-hidden="true"></div>
+
+          <ul class="panel__readouts">
+            <li>
+              <span class="panel__readout-val">23:15</span>
+              <span class="panel__readout-key">focus recovery per interruption</span>
+            </li>
+            <li>
+              <span class="panel__readout-val" id="switches-counter" data-target="1200">0</span>
+              <span class="panel__readout-key">app switches per day</span>
+            </li>
+            <li>
+              <span class="panel__readout-val">40%</span>
+              <span class="panel__readout-key">productive time lost</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ========== SCIENCE ========== -->
+    <section class="section section--science" id="science" aria-labelledby="science-title">
+      <div class="container">
+        <div class="section__intro section__intro--narrow">
+          <p class="eyebrow"><span class="eyebrow__num">02</span> Research</p>
+          <h2 class="section__title" id="science-title">The science of the attention tax.</h2>
+          <p class="section__lede">
+            This isn&rsquo;t a productivity theory. It&rsquo;s a neurobiological fact. Most companies believe their teams are losing productivity due to poor execution or lack of time management. The science shows a completely different reality: your team&rsquo;s cognitive architecture is being actively degraded by the modern digital workspace.
+          </p>
+          <p class="section__lede section__lede--serif">
+            We aren&rsquo;t failing at multitasking; we are succeeding at rapid, exhausting task-switching &mdash; and businesses are footing the bill.
+          </p>
+        </div>
+
+        <ol class="findings" aria-label="Research findings">
+
+          <li class="finding">
+            <span class="finding__num">01</span>
+            <div class="finding__stat">
+              <span class="finding__stat-val">40<sup>%</sup></span>
+              <span class="finding__stat-label">productivity drain</span>
+            </div>
+            <div class="finding__body">
+              <h3 class="finding__title">The brain doesn&rsquo;t multitask. It task-switches &mdash; and pays for every switch.</h3>
+              <p class="finding__text">
+                Research from the American Psychological Association (Rubinstein, Meyer, and Evans) proves that the human brain cannot process parallel complex tasks. What we call &ldquo;multitasking&rdquo; is actually rapid context switching. This constant stopping and starting creates a severe cognitive load that costs up to 40% of a knowledge worker&rsquo;s productive time every single day.
+              </p>
+              <p class="finding__cite">American Psychological Association &mdash; Rubinstein, Meyer &amp; Evans</p>
+            </div>
+          </li>
+
+          <li class="finding">
+            <span class="finding__num">02</span>
+            <div class="finding__stat">
+              <span class="finding__stat-val">1,200</span>
+              <span class="finding__stat-label">app switches per day</span>
+            </div>
+            <div class="finding__body">
+              <h3 class="finding__title">Digital fragmentation costs five weeks of output per year.</h3>
+              <p class="finding__text">
+                A Harvard Business Review study found that the average digital worker toggles between different applications and websites roughly 1,200 times per day &mdash; once every 24 seconds. This &ldquo;digital fragmentation&rdquo; requires the brain to constantly reorient, costing the average employee 5 full weeks of productive output per year just in transition time.
+              </p>
+              <p class="finding__cite">Harvard Business Review</p>
+            </div>
+          </li>
+
+          <li class="finding">
+            <span class="finding__num">03</span>
+            <div class="finding__stat">
+              <span class="finding__stat-val">40<sup>%</sup></span>
+              <span class="finding__stat-label">performance drop</span>
+            </div>
+            <div class="finding__body">
+              <h3 class="finding__title">Attention residue: your mind stays stuck on the last task.</h3>
+              <p class="finding__text">
+                When an employee jumps from an unfinished email to a Zoom meeting, their brain doesn&rsquo;t completely transition. Dr. Sophie Leroy&rsquo;s landmark research defines this as <em>attention residue</em>. A portion of your cognitive capacity remains involuntarily stuck on the previous task. The result? A 30% to 40% drop in performance, higher error rates, and silent mental exhaustion on the current task.
+              </p>
+              <p class="finding__cite">Dr. Sophie Leroy &mdash; University of Washington</p>
+            </div>
+          </li>
+
+          <li class="finding">
+            <span class="finding__num">04</span>
+            <div class="finding__stat">
+              <span class="finding__stat-val">23:15</span>
+              <span class="finding__stat-label">minutes to refocus</span>
+            </div>
+            <div class="finding__body">
+              <h3 class="finding__title">One ping doesn&rsquo;t cost five seconds. It costs a half-hour.</h3>
+              <p class="finding__text">
+                It takes an average of 23 minutes and 15 seconds to fully regain deep cognitive focus after a single, minor interruption. When Slack pings or an unnecessary calendar alert pops up, you aren&rsquo;t losing 5 seconds &mdash; you are losing a half-hour of peak intellectual capacity.
+              </p>
+              <p class="finding__cite">Dr. Gloria Mark &mdash; UC Irvine</p>
+            </div>
+          </li>
+
+        </ol>
+
+        <blockquote class="conclusion">
+          <p class="conclusion__label">The conclusion</p>
+          <p class="conclusion__text">
+            The problem is no longer time lost. It is the degradation of operational cognitive capacity &mdash; and the bill is paid in payroll every year.
+          </p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ========== PRICING / ROI ========== -->
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section__intro section__intro--narrow">
+          <p class="eyebrow"><span class="eyebrow__num">03</span> The cost</p>
+          <h2 class="section__title" id="pricing-title">The $200k leak in your payroll.</h2>
+          <p class="section__lede">
+            Protecting focus isn&rsquo;t an HR wellness initiative. It&rsquo;s a critical financial decision. The cost of doing nothing is mathematically devastating to your margins.
+          </p>
+        </div>
+
+        <!-- Interactive ROI calculator -->
+        <div class="roi">
+          <div class="roi__calc">
+            <div class="roi__calc-head">
+              <span class="roi__calc-label">The attention tax &mdash; do your own math</span>
+              <span class="roi__calc-note">Drag to adjust</span>
+            </div>
+
+            <div class="roi__controls">
+              <label class="roi__control">
+                <span class="roi__control-key">Team size<span class="roi__control-val" id="roi-team-val">50</span></span>
+                <input type="range" id="roi-team" min="5" max="500" step="5" value="50" aria-label="Team size" />
+              </label>
+              <label class="roi__control">
+                <span class="roi__control-key">Loaded $ / hour<span class="roi__control-val" id="roi-rate-val">$12</span></span>
+                <input type="range" id="roi-rate" min="12" max="120" step="2" value="12" aria-label="Loaded hourly cost" />
+              </label>
+            </div>
+
+            <div class="roi__equation">
+              <span class="roi__eq-piece" id="eq-team">50</span>
+              <span class="roi__eq-op">&times;</span>
+              <span class="roi__eq-piece">1.5</span>
+              <span class="roi__eq-op">&times;</span>
+              <span class="roi__eq-piece">240</span>
+              <span class="roi__eq-op">&times;</span>
+              <span class="roi__eq-piece" id="eq-rate">$12</span>
+              <span class="roi__eq-op">=</span>
+              <span class="roi__eq-result" id="eq-total">$216,000</span>
+            </div>
+            <p class="roi__equation-note">employees &times; 1.5 hrs lost / day (avg) &times; workdays &times; hourly cost = annual loss</p>
+          </div>
+
+          <div class="roi__result">
+            <div class="roi__result-lost">
+              <span class="roi__result-label">Lost annually</span>
+              <span class="roi__result-amount roi__result-amount--lost" id="roi-lost">$216,000</span>
+              <span class="roi__result-sub">in operational capacity you aren&rsquo;t tracking</span>
+            </div>
+            <div class="roi__result-rule" aria-hidden="true"></div>
+            <div class="roi__result-saved">
+              <span class="roi__result-label">Recoverable<sup>&dagger;</sup></span>
+              <span class="roi__result-amount roi__result-amount--saved" id="roi-saved">$48,000</span>
+              <span class="roi__result-sub">20 minutes of context switching recovered per employee per day</span>
+            </div>
+          </div>
+        </div>
+        <p class="roi__footnote"><sup>&dagger;</sup> Based on recovering 20 minutes of daily context switching per employee against the same rate and workday assumptions.</p>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCT / SOLUTION ========== -->
+    <section class="section" id="product" aria-labelledby="product-title">
+      <div class="container">
+        <div class="section__intro section__intro--product">
+          <div class="section__intro-copy">
+            <p class="eyebrow"><span class="eyebrow__num">04</span> The solution</p>
+            <h2 class="section__title" id="product-title">
+              Enter <em>FOCUS</em>
+            </h2>
+            <p class="section__lede">
+              We don&rsquo;t believe in relying on individual discipline. &ldquo;Trying harder to focus&rdquo; doesn&rsquo;t scale in a corporate environment. Willpower is not a strategy &mdash; and neither are blocker apps that employees can silence the moment work gets hard.
+            </p>
+            <p class="section__lede">
+              FOCUS is invisible, enterprise-grade infrastructure that sits quietly across your team&rsquo;s digital workspace. It detects when deep work is required, shields people from non-critical noise, and turns cognitive capacity into something leadership can actually measure and protect.
+            </p>
+            <p class="section__lede section__lede--serif">
+              No new habits to train. No dashboards employees must check. Just less context switching &mdash; and more of the work that moves the business.
+            </p>
+          </div>
+          <div class="focus-mark" aria-hidden="true">
+            <svg class="focus-mark__svg" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="140" cy="140" r="118" stroke="currentColor" stroke-width="1" opacity="0.18"/>
+              <circle cx="140" cy="140" r="86" stroke="currentColor" stroke-width="1" opacity="0.28"/>
+              <circle cx="140" cy="140" r="54" stroke="currentColor" stroke-width="1.25" opacity="0.4"/>
+              <circle cx="140" cy="140" r="22" fill="currentColor" opacity="0.12"/>
+              <circle cx="140" cy="140" r="8" fill="currentColor"/>
+              <path d="M140 28v22M140 230v22M28 140h22M230 140h22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+              <path d="M54.5 54.5l15.5 15.5M210 210l15.5 15.5M225.5 54.5 210 70M70 210 54.5 225.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" opacity="0.28"/>
+              <path d="M118 98c12-14 32-14 44 0M112 140h56M118 182c12 14 32 14 44 0" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" opacity="0.55"/>
+            </svg>
+          </div>
+        </div>
+
+        <ol class="features" aria-label="FOCUS capabilities">
+
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="17" rx="2"/>
+                <path d="M3 9h18M8 2v4M16 2v4"/>
+                <circle cx="12" cy="14" r="3.2"/>
+                <path d="M12 12.4v1.6l1.1.9"/>
+              </svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Auto-detects meetings</h3>
+              <p class="feature__text">Entering a Zoom or Google Meet instantly activates Deep Work mode, blocking desktop interruptions so you stay present.</p>
+            </div>
+            <span class="feature__tag">Auto</span>
+          </li>
+
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.5 4.5 5.5v6c0 4.4 3 8.4 7.5 10 4.5-1.6 7.5-5.6 7.5-10v-6L12 2.5Z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">The invisible shield</h3>
+              <p class="feature__text">Mutes non-critical notifications and limits destructive multitasking during complex workflows.</p>
+            </div>
+            <span class="feature__tag">Shield</span>
+          </li>
+
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/>
+                <rect x="7" y="12" width="3" height="5"/>
+                <rect x="12" y="8" width="3" height="9"/>
+                <rect x="17" y="5" width="3" height="12"/>
+              </svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Enterprise cognitive analytics</h3>
+              <p class="feature__text">We turn &ldquo;I feel focused&rdquo; into hard business KPIs like Hours of Deep Work Protected and Interruption Reduction Rates.</p>
+            </div>
+            <span class="feature__tag">Analytics</span>
+          </li>
+
+          <li class="feature">
+            <span class="feature__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>
+              </svg>
+            </span>
+            <div class="feature__body">
+              <h3 class="feature__title">Zero manual setup</h3>
+              <p class="feature__text">Centralized company policies mean employees don&rsquo;t waste time customizing blocker settings.</p>
+            </div>
+            <span class="feature__tag">Policy</span>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== DEMO CTA ========== -->
+    <section class="cta" id="demo" aria-labelledby="cta-title">
+      <div class="container cta__grid">
+        <div class="cta__copy">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__num">05</span> Book a demo</p>
+          <p class="cta__quote">
+            Slack organized communication.<br />
+            Notion organized knowledge.<br />
+            <em>FOCUS organizes attention.</em>
+          </p>
+          <h2 class="cta__title" id="cta-title">
+            Take back control of the digital economy&rsquo;s scarcest resource.
+          </h2>
+          <p class="cta__lede">
+            Stop paying the attention tax. See how FOCUS can recover thousands of hours of lost cognitive capacity for your team.
+          </p>
+        </div>
+
+        <form class="form" id="demo-form" novalidate>
+          <p class="form__head">Schedule your demo</p>
+
+          <label class="field">
+            <span class="field__label">First name</span>
+            <input class="field__input" type="text" name="firstname" autocomplete="given-name" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Work email</span>
+            <input class="field__input" type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Company name</span>
+            <input class="field__input" type="text" name="company" autocomplete="organization" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Team size</span>
+            <select class="field__input field__input--select" name="teamsize" required>
+              <option value="" disabled selected>Select a range</option>
+              <option value="1-50">1&ndash;50</option>
+              <option value="51-200">51&ndash;200</option>
+              <option value="201+">201+</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Biggest distraction challenge</span>
+            <select class="field__input field__input--select" name="challenge" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="meetings">Meetings</option>
+              <option value="switching">App switching</option>
+              <option value="notifications">Notifications</option>
+            </select>
+          </label>
+
+          <button class="btn btn--primary btn--block" type="submit">Schedule my demo<span aria-hidden="true">&rarr;</span></button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="footer__brand" href="#top">
+        <span class="nav__brand-mark" aria-hidden="true"></span>
+        FOCUS
+      </a>
+      <p class="footer__meta">FOCUS &copy; 2026 &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Service</a></p>
+      <p class="footer__tag">Attention is the scarcest resource in the modern enterprise.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
