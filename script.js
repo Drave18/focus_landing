@@ -145,11 +145,174 @@ const initReveal = () => {
 
 initReveal();
 
+/* -------- Custom selects ---------------------------------------------- */
+const initSelects = () => {
+  const selects = document.querySelectorAll('[data-select]');
+  if (!selects.length) return;
+
+  const closeAll = (except) => {
+    for (const root of selects) {
+      if (root === except) continue;
+      closeSelect(root);
+    }
+  };
+
+  const closeSelect = (root) => {
+    const trigger = root.querySelector('.select__trigger');
+    const menu = root.querySelector('.select__menu');
+    if (!trigger || !menu) return;
+    root.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    menu.hidden = true;
+    for (const opt of menu.querySelectorAll('.select__option')) {
+      opt.classList.remove('is-active');
+    }
+  };
+
+  const openSelect = (root) => {
+    const trigger = root.querySelector('.select__trigger');
+    const menu = root.querySelector('.select__menu');
+    if (!trigger || !menu) return;
+    closeAll(root);
+    root.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    menu.hidden = false;
+
+    const selected = menu.querySelector('.select__option[aria-selected="true"]');
+    const first = menu.querySelector('.select__option');
+    const active = selected || first;
+    if (active) {
+      active.classList.add('is-active');
+      active.focus();
+    }
+  };
+
+  const setValue = (root, value, label) => {
+    const native = root.querySelector('.select__native');
+    const valueEl = root.querySelector('.select__value');
+    const menu = root.querySelector('.select__menu');
+    if (!native || !valueEl || !menu) return;
+
+    native.value = value;
+    native.dispatchEvent(new Event('change', { bubbles: true }));
+    valueEl.textContent = label;
+    valueEl.classList.remove('is-placeholder');
+
+    for (const opt of menu.querySelectorAll('.select__option')) {
+      const selected = opt.dataset.value === value;
+      opt.setAttribute('aria-selected', selected ? 'true' : 'false');
+    }
+  };
+
+  const moveActive = (root, delta) => {
+    const menu = root.querySelector('.select__menu');
+    if (!menu || menu.hidden) return;
+    const options = [...menu.querySelectorAll('.select__option')];
+    if (!options.length) return;
+
+    let idx = options.findIndex((opt) => opt.classList.contains('is-active'));
+    if (idx < 0) idx = options.findIndex((opt) => opt.getAttribute('aria-selected') === 'true');
+    idx = Math.max(0, Math.min(options.length - 1, (idx < 0 ? 0 : idx) + delta));
+
+    for (const opt of options) opt.classList.remove('is-active');
+    options[idx].classList.add('is-active');
+    options[idx].focus();
+  };
+
+  for (const root of selects) {
+    const trigger = root.querySelector('.select__trigger');
+    const menu = root.querySelector('.select__menu');
+    const native = root.querySelector('.select__native');
+    if (!trigger || !menu || !native) continue;
+
+    for (const opt of menu.querySelectorAll('.select__option')) {
+      opt.setAttribute('aria-selected', 'false');
+    }
+
+    trigger.addEventListener('click', () => {
+      if (root.classList.contains('is-open')) closeSelect(root);
+      else openSelect(root);
+    });
+
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openSelect(root);
+      }
+    });
+
+    menu.addEventListener('click', (e) => {
+      const opt = e.target.closest('.select__option');
+      if (!opt) return;
+      setValue(root, opt.dataset.value, opt.textContent.trim());
+      closeSelect(root);
+      trigger.focus();
+    });
+
+    menu.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        moveActive(root, 1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        moveActive(root, -1);
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const active = menu.querySelector('.select__option.is-active');
+        if (!active) return;
+        setValue(root, active.dataset.value, active.textContent.trim());
+        closeSelect(root);
+        trigger.focus();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        closeSelect(root);
+        trigger.focus();
+      } else if (e.key === 'Tab') {
+        closeSelect(root);
+      }
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-select]')) return;
+    closeAll();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+};
+
+initSelects();
+
 /* -------- Demo form --------------------------------------------------- */
 const initForm = () => {
   const form = document.getElementById('demo-form');
   const status = document.getElementById('form-status');
   if (!form || !status) return;
+
+  const resetCustomSelects = () => {
+    for (const root of form.querySelectorAll('[data-select]')) {
+      const native = root.querySelector('.select__native');
+      const valueEl = root.querySelector('.select__value');
+      const menu = root.querySelector('.select__menu');
+      const trigger = root.querySelector('.select__trigger');
+      if (!native || !valueEl || !menu || !trigger) continue;
+
+      native.selectedIndex = 0;
+      const placeholder = native.options[0]?.textContent?.trim() || 'Select';
+      valueEl.textContent = placeholder;
+      valueEl.classList.add('is-placeholder');
+      root.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+
+      for (const opt of menu.querySelectorAll('.select__option')) {
+        opt.setAttribute('aria-selected', 'false');
+        opt.classList.remove('is-active');
+      }
+    }
+  };
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -177,6 +340,7 @@ const initForm = () => {
     status.classList.remove('is-error');
     status.textContent = 'Thanks — your demo is scheduled. We’ll reach out within one business day.';
     form.reset();
+    resetCustomSelects();
   });
 };
 

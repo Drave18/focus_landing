@@ -380,25 +380,67 @@
             <input class="field__input" type="text" name="company" autocomplete="organization" required />
           </label>
 
-          <label class="field">
-            <span class="field__label">Team size</span>
-            <select class="field__input field__input--select" name="teamsize" required>
-              <option value="" disabled selected>Select a range</option>
-              <option value="1-50">1&ndash;50</option>
-              <option value="51-200">51&ndash;200</option>
-              <option value="201+">201+</option>
-            </select>
-          </label>
+          <div class="field">
+            <span class="field__label" id="teamsize-label">Team size</span>
+            <div class="select" data-select>
+              <select class="select__native" name="teamsize" required tabindex="-1" aria-hidden="true">
+                <option value="" disabled selected>Select a range</option>
+                <option value="1-50">1&ndash;50 people</option>
+                <option value="51-200">51&ndash;200 people</option>
+                <option value="201+">201+ people</option>
+              </select>
+              <button
+                type="button"
+                class="select__trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-labelledby="teamsize-label"
+              >
+                <span class="select__value is-placeholder">Select a range</span>
+                <span class="select__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 12 8" width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 1.5 6 6.5 11 1.5"/>
+                  </svg>
+                </span>
+              </button>
+              <ul class="select__menu" role="listbox" hidden>
+                <li class="select__option" role="option" data-value="1-50" tabindex="-1">1&ndash;50 people</li>
+                <li class="select__option" role="option" data-value="51-200" tabindex="-1">51&ndash;200 people</li>
+                <li class="select__option" role="option" data-value="201+" tabindex="-1">201+ people</li>
+              </ul>
+            </div>
+          </div>
 
-          <label class="field">
-            <span class="field__label">Biggest distraction challenge</span>
-            <select class="field__input field__input--select" name="challenge" required>
-              <option value="" disabled selected>Select one</option>
-              <option value="meetings">Meetings</option>
-              <option value="switching">App switching</option>
-              <option value="notifications">Notifications</option>
-            </select>
-          </label>
+          <div class="field">
+            <span class="field__label" id="challenge-label">Biggest distraction challenge</span>
+            <div class="select" data-select>
+              <select class="select__native" name="challenge" required tabindex="-1" aria-hidden="true">
+                <option value="" disabled selected>Select one</option>
+                <option value="meetings">Meetings</option>
+                <option value="switching">App switching</option>
+                <option value="notifications">Notifications</option>
+              </select>
+              <button
+                type="button"
+                class="select__trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-labelledby="challenge-label"
+              >
+                <span class="select__value is-placeholder">Select one</span>
+                <span class="select__chevron" aria-hidden="true">
+                  <svg viewBox="0 0 12 8" width="12" height="8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 1.5 6 6.5 11 1.5"/>
+                  </svg>
+                </span>
+              </button>
+              <ul class="select__menu" role="listbox" hidden>
+                <li class="select__option" role="option" data-value="meetings" tabindex="-1">Meetings</li>
+                <li class="select__option" role="option" data-value="switching" tabindex="-1">App switching</li>
+                <li class="select__option" role="option" data-value="notifications" tabindex="-1">Notifications</li>
+              </ul>
+            </div>
+          </div>
 
           <button class="btn btn--primary btn--block" type="submit">Schedule my demo<span aria-hidden="true">&rarr;</span></button>
           <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
